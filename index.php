@@ -14,8 +14,13 @@
     <main class="main">
         <section class="page">
             <header class="topo">
-                <img src="img/favicon.png" class="logo">
-                <h2 class="titulo">Sistema de Cadastro de Jogos </h2>
+                <div class="coluna1">
+                    <img src="img/favicon.png" class="logo">
+                    <h2 class="titulo">Sistema de Cadastro de Jogos </h2>
+                </div>
+                <div class="coluna2">
+                    <button class="btn-login">Login</button>
+                </div>
             </header>
 
             <section class="conteudo">

@@ -22,12 +22,36 @@
             border-bottom: 2px solid #ddd;
             padding: 20px;
             display: flex;
+            justify-content: space-between;
             align-items: center;
             gap: 20px;
 
-            .logo {
-                width: 50px;
+            .coluna1 {
+                display: flex;
+                gap: 25px;
+                align-items: center;
+                
+                .logo {
+                    width: 50px;
+                }
             }
+
+            .coluna2 {
+                display: flex;
+
+                .btn-login {
+                    background-color: #ddd;
+                    border: none;
+                    padding: 10px 15px;
+                    border-radius: 5px;
+                    cursor: pointer;
+
+                    &:hover {
+                        box-shadow: 1px 1px 5px rgba(0, 0, 0, .50);
+                    }
+                }
+            }
+
         }
 
         // Corpo - Conteúdo

@@ -45,7 +45,7 @@ foreign key(produtora) references produtoras(cod)
 -- Comando para mostrar a estrutura da Tabela
 describe generos;
 
--- Inserido Dados na Tabela. (Por não espessificar os nomes das colunas e sua ordem, a coluna cod que é auto incremento preciso colocar o valor default).
+-- Inserido Dados na Tabela. (Por não especificar os nomes das colunas e sua ordem, a coluna cod que é auto incremento preciso colocar o valor default).
 insert into generos values
 (default, 'Ação'),
 (default, 'Aventura'),
@@ -116,3 +116,23 @@ insert into usuarios (login, nome, senha, tipo) values
 -- davi, teste
 
 select * from usuarios;
+
+
+-- Comandos para filtrar pesquisas
+
+-- Pesquisa geral de uma tabela
+select * from jogos;
+
+-- Pesquisa que define colunas especificas de uma consulta (fica de fora genero e produtora)
+select jogos.cod, jogos.nome, jogos.descricao, jogos.nota, jogos.capa from jogos;
+
+-- Pesquisa definindo um "apelido" para a tabela (trocando jogos por j)
+select j.cod, j.nome, j.descricao, j.nota, j.capa from jogos j;
+
+-- Pesquisa que muda o conteudo de uma coluna usando informações de outra tabela
+select j.cod, j.nome, g.genero, j.produtora, j.descricao, j.nota, j.capa from jogos j
+join generos g on j.genero = g.cod;
+
+select j.cod, j.nome, g.genero, p.produtora, j.descricao, j.nota, j.capa from jogos j
+join generos g on j.genero = g.cod
+join produtoras p on j.produtora = p.cod;

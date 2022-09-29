@@ -8,11 +8,15 @@
     <!-- Estilo Local -->
     <link rel="stylesheet" href="css/estilo.css">
 
+    <!-- Script -->
+    <script src="js/script.js" denfer></script>
+
     <title>Sistema de Jogo</title>
 </head>
 <body>
     <?php
         require_once "includs/conexao.php";
+        require_once "includs/modulos.php"
     ?>
 
     <main class="main">
@@ -40,6 +44,7 @@
                     <table class="tabela">
                         <?php
                             $busca = $conexao->query("select * from jogos order by nome");
+
                             if(!$busca) {
                                 echo "
                                 <tr class='linha'>
@@ -55,9 +60,10 @@
                                     </tr>";
                                 } else {
                                     while($registros = $busca->fetch_object()) {
+                                        $imgPadrao = verificaImg($registros->capa);
                                         echo "
                                         <tr class='linha'>
-                                            <td class='coluna'>foto</td>
+                                            <td class='coluna'><img src='$imgPadrao' class='capa'></td>
                                             <td class='coluna'>$registros->nome</td>
                                             <td class='coluna'>Adm.</td>
                                         </tr>";
@@ -65,6 +71,7 @@
                                 }
                             }
                         ?>
+                        <!-- <td><img src="img/fotos/$registros->capa" class="capa"></td> -->
                     </table>
                 </div>
                 </table>

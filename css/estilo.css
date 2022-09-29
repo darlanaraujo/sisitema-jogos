@@ -71,7 +71,7 @@
 
 .main .page .conteudo .wrapper-tabela {
   width: 100%;
-  height: 60vh;
+  height: calc(100vh - 300px);
   overflow-y: scroll;
 }
 
@@ -109,7 +109,11 @@
 }
 
 .main .page .conteudo .tabela .coluna:nth-child(3) {
-  width: 90px;
+  width: 120px;
+}
+
+.main .page .conteudo .tabela .capa {
+  width: 50px;
 }
 
 .main .page .roda-pe {
